@@ -14,7 +14,9 @@ public class DataBase {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        PersonList personList = new PersonList();
+        personList.arrayListFromTxt("src\\Files\\sourceData.txt");
+        personList.printPersonList();
     }
     
 }
