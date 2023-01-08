@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import panels.ButtonPanel;
 import panels.MainPanel;
+import panels.MenuPanel;
 
 /**
  *
@@ -22,6 +23,7 @@ public class MainFrame extends JFrame {
     private final ButtonPanel buttonPanel;
     private final JScrollPane tableScrollPane;
     private final Table jTable;
+    private final MenuPanel menuPanel;
 
     public MainFrame(PersonList personList) {
         
@@ -34,7 +36,9 @@ public class MainFrame extends JFrame {
         jTable = new Table(personList);
         tableScrollPane = new JScrollPane(jTable);
         buttonPanel = new ButtonPanel(personList,jTable);
+        menuPanel = new MenuPanel(personList,tableScrollPane);
 
+        mainPanel.add(menuPanel, BorderLayout.PAGE_START);
         mainPanel.add(tableScrollPane, BorderLayout.CENTER);
         mainPanel.add(buttonPanel, BorderLayout.PAGE_END);
 
