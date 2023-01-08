@@ -4,6 +4,9 @@
  */
 package database;
 
+import customClasses.PersonList;
+import frames.MainFrame;
+
 /**
  *
  * @author mndzr
@@ -16,7 +19,7 @@ public class DataBase {
     public static void main(String[] args) {
         PersonList personList = new PersonList();
         personList.arrayListFromTxt("src\\Files\\sourceData.txt");
-        personList.printPersonList();
+        new MainFrame(personList);
     }
     
 }
