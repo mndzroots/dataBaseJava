@@ -4,8 +4,10 @@
  */
 package database;
 
+import customClasses.Person;
 import customClasses.PersonList;
 import frames.MainFrame;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,9 +18,11 @@ public class DataBase {
     /**
      * @param args the command line arguments
      */
+    public static ArrayList<Person> list;
     public static void main(String[] args) {
         PersonList personList = new PersonList();
         personList.arrayListFromTxt("src\\Files\\sourceData.txt");
+        list = personList.getList();
         new MainFrame(personList);
     }
     

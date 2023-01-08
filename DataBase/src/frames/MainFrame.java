@@ -9,6 +9,7 @@ import customClasses.PersonList;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
+import panels.ButtonPanel;
 import panels.MainPanel;
 
 /**
@@ -18,11 +19,12 @@ import panels.MainPanel;
 public class MainFrame extends JFrame {
 
     private final MainPanel mainPanel;
+    private final ButtonPanel buttonPanel;
     private final JScrollPane tableScrollPane;
     private final Table jTable;
 
     public MainFrame(PersonList personList) {
-
+        
         setSize(650, 520);
         setLocationRelativeTo(null);
         setTitle("Base De Datos");
@@ -31,8 +33,10 @@ public class MainFrame extends JFrame {
         mainPanel = new MainPanel();
         jTable = new Table(personList);
         tableScrollPane = new JScrollPane(jTable);
+        buttonPanel = new ButtonPanel(personList,jTable);
 
         mainPanel.add(tableScrollPane, BorderLayout.CENTER);
+        mainPanel.add(buttonPanel, BorderLayout.PAGE_END);
 
         add(mainPanel);
 
