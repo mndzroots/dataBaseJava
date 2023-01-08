@@ -1,9 +1,9 @@
-package database;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+package customClasses;
+
 /**
  *
  * @author mndzr
@@ -31,10 +31,11 @@ public class Person {
         edad = e;
         this.id = id;
     }
-
+    
     public String personToString(String s) {
         return nombre + s + apellidoP + s + apellidoM + s + edad + s + id;
     }
+    
 
     @Override
     public String toString() {
@@ -44,9 +45,9 @@ public class Person {
     public void imprimePersona() {
         System.out.println("{Nombre=" + nombre + ", Apellido Paterno=" + apellidoP + ", Apellido Materno=" + apellidoM + ", Edad=" + edad + ", Id=" + id + '}');
     }
-
+    
     public String appendPersona() {
-        return nombre + " " + apellidoP + " " + apellidoM + " " + edad + " " + id;
+        return nombre+" "+apellidoP + " " + apellidoM + " " + edad + " " + id;
     }
 
     public String getNombre() {
@@ -88,4 +89,5 @@ public class Person {
     public void setId(int id) {
         this.id = id;
     }
+
 }
